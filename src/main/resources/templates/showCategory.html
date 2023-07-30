@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+<div th:each="category : ${categories}">
+    <a th:href="@{/motivation/{category}(category=${category.getCategory_id()})}"
+       th:text="${category.getCategory_name}">Category</a>
+</div>
+
+</body>
+</html>

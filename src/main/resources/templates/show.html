@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show motivation</title>
+</head>
+<body>
+<p th:text="${motivation.getMotivation_text().toUpperCase()}">VALUE</p>
+<hr/>
+
+
+<a th:href="@{http://localhost:8080/motivation/categories}"
+    th:text="back + ' ' + to + ' ' + categories"></a>
+<br><br>
+
+
+
+</body>
+</html>
