@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites</title>
+</head>
+<body>
+<div th:each="favorite : ${favorites}">
+    <p th:text="${favorite.favorite_text}">Favorite</p>
+    <form th:action="@{/motivation/favorite}" method="post">
+        <input type="hidden" name="favoriteId" th:value="${favorite.favorite_id}" />
+        <button type="submit">Delete</button>
+    </form>
+</div>
+<br/>
+<hr/>
+<a th:href="@{http://localhost:8080/motivation/categories}" th:text="Вернуться + ' ' + к + ' ' + категориям">value</a>
+
+
+</body>
+</html>

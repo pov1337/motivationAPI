@@ -8,12 +8,19 @@
 <p th:text="${motivation.getMotivation_text().toUpperCase()}">VALUE</p>
 <hr/>
 
+<form th:method="POST" th:action="@{/motivation/{category}}" th:object="${motivation}">
+    <input type="hidden" th:field="*{motivation_text}" name="favorite" />
+    <input type="submit" value="Добавить в избранное!">
+</form>
 
+
+<br/><br/>
+<a th:href="@{http://localhost:8080/motivation/favorite}"
+   th:text="В + ' ' + избранное"></a>
+<br/><br/>
 <a th:href="@{http://localhost:8080/motivation/categories}"
-    th:text="back + ' ' + to + ' ' + categories"></a>
+   th:text="Вернуться  + ' ' + к + ' ' + категориям"></a>
 <br><br>
-
-
 
 </body>
 </html>

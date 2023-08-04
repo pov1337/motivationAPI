@@ -7,8 +7,12 @@
 <body>
 <div th:each="category : ${categories}">
     <a th:href="@{/motivation/{category}(category=${category.getCategory_id()})}"
+       th:target="_blank"
        th:text="${category.getCategory_name}">Category</a>
 </div>
+<br>
+<hr/>
+<a th:href="@{http://localhost:8080/motivation/favorite}" th:text="В + ' ' + избранное">value</a>
 
 </body>
 </html>
